@@ -1,9 +1,10 @@
-.container
+.blck
 {
-    display: grid;
+    margin: 0px;
+    border: 0px;
 }
 
-.blocks:hover
+.blocks
 {
     background-color: black;
 }
