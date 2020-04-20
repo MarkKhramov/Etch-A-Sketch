@@ -1,6 +1,9 @@
 const TOTALPX = 960;
-var container = document.getElementById("container");
+let container = document.getElementById("container");
+let clearButton = document.getElementById("clearButton");
+let initialSide = 16;
 
+createBoard(initialSide);
 
 function createBoard(num)
 {
@@ -32,4 +35,18 @@ function createBlocks(numPerSide, sideLength)
         container.appendChild(block);  
     }
 }
-createBoard(100)
+
+function refreshBoard()
+{  
+    numPerSide = prompt("Please input the number of blocks per side:")
+    
+    while(container.firstChild)
+    {
+        container.firstChild.remove();
+    }
+
+    createBoard(numPerSide);
+}
+
+
+clearButton.addEventListener("click", refreshBoard);
